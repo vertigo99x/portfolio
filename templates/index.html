@@ -1,0 +1,372 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preload" href="{% static './bg2.jpg' %}">
+    <link rel="preload" href="{% static './header-img.84bf93eb20488a753440bf83d27db7bb.svg' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="shortcut icon" href="{% static '/favicon.png' %}" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+</head>
+<body>
+    <div class="loading-bar">
+        <div class="loading">
+            <div class="loading2"></div>
+        </div>
+        
+    </div>
+    
+    {% if messages %}
+                
+    <div class="modal"  onclick="document.querySelector('.modal').style.display='none';document.querySelector('.modal').innerHTML='';">
+        <div class="modal-content">
+            <div class="close"><i class='bx bx-window-close' onclick="document.querySelector('.modal').style.display='none';document.querySelector('.modal').innerHTML='';"></i></div>
+            <div class="content-message">
+             
+                {% for message in messages %}
+
+                <h3>{{message}}</h3>
+                    
+                {% endfor %}
+                    
+            
+            </div>
+        </div>
+        
+    </div>
+
+    {% endif %}
+    
+    <div class="main-overlay" onclick="showSidebar()"></div>
+
+
+    <aside class="sidebar">
+    
+        <a href="" class="aside-logo">Portfolio</a>
+        
+        <div class="aside-navbar">
+            <a  onclick="showSidebar()" href="#home">Home</a>
+            <a  onclick="showSidebar()" href="#about">About</a>
+            <a  onclick="showSidebar()" href="#services" id="aside-services">Certification</a>
+            <a  onclick="showSidebar()" href="#skills">Skills</a>
+            <a  onclick="showSidebar()" href="#contact">Contact Me</a>
+        </ul>
+        
+    </aside>
+     <header class="header">
+        <a href="" class="logo"> My Portfolio</a>
+
+        <nav class="navbar">
+            <a href="#home" style="--i:1" class="active">Home</a>
+            <a href="#about" style="--i:2">About</a>
+            <a href="#services" style="--i:3">Certification</a>
+            <a href="#skills" style="--i:4">Skills</a>
+            <a href="#contact" style="--i:5">Contact Me</a>
+         </nav>  
+         <div class="hamburger" onclick="showSidebar()">
+            <span class="bx bx-menu"></span>
+         </div>  
+     </header>
+     <section class="home" id="home">
+       <div class="main">
+        <div class="home-content">
+            <h3>Hello, I am</h3>
+            <h1>Nifemi Odukoya</h1>
+            <h3>And I'm a <span class="text"></span></h3>
+            <p>I specialize in crafting high-caliber responsive websites that boast both swiftness and user-friendliness.
+                 <br> My commitment lies in fashioning stunning designs that effortlessly captivate users' attention.
+            </p>
+            <div class="home-sci">
+                <a href="mailto:3ples1234@gmail.com" style="--i:7"><i class="bx bxl-gmail"></i></a>
+                <a href="https://wa.me/+2348156940124" style="--i:8"><i class="bx bxl-whatsapp"></i></a>
+                <a href="https://github.com/vertigo99x" style="--i:9"><i class="bx bxl-github"></i></a>
+                <a href="https://www.linkedin.com/in/oluwanifemi-odukoya-39490821b/" style="--i:10"><i class="bx bxl-linkedin-square"></i></a>
+               
+            </div>
+            <div class="btn-block">
+                <a href="#about" class="btn-box">More About me</a>
+                <a href="#contact" class="btn-box-2">Contact Me</a>
+            </div>
+        </div>
+        <div class="img" id="hovering-spaceman">
+            <img src="{% static './header-img.84bf93eb20488a753440bf83d27db7bb.svg' %}" alt="">
+        </div>
+       </div>
+
+        <div class="overlay"></div>
+        <span class="home-imgHover"></span>
+     </section>
+     <section class="about" id="about">
+        <div class="about-img">
+            <img src="{% static './header-img.84bf93eb20488a753440bf83d27db7bb.svg' %}" alt="">
+        </div>
+        <div class="about-text">
+            <h2>About <span>Me</span></h2>
+            <h4>Full-Stack Developer</h4>
+            <p id="about-me">I am a Software Developer that specializes in Majorly Web development.
+                A driving force behind my work is an unyielding dedication to ongoing learning, as I continually enhance my skill set. This relentless pursuit empowers me to consistently deliver websites and designs of uncompromising quality.
+                 Embark with me on this journey of innovation, where technology seamlessly intertwines with imagination.
+            </p>
+            <a href="#" class="btn-box">More About me</a>
+        </div>
+
+
+        
+     </section>
+
+    
+
+     <h1 class="sub-title" >My <span>Skills</span></h1>
+     
+     <section class="skill-section">
+        
+        <div class="container1" >
+           
+            <h1 class="heading1">Technical Skills</h1>
+            
+            <div class="technical-bars">
+                <div class="bar">
+                    <i class="bx bxl-html5" style="color:#c95d2e"></i>
+                    <div class="info">
+                        <span>HTML</span>
+                    </div>
+                    <div class="progress-line html">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bar">
+                    <i class="bx bxl-css3" style="color:#147bbc"></i>
+                    <div class="info">
+                        <span>CSS</span>
+                    </div>
+                    <div class="progress-line css">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bar"><i class="bx bxl-css3" style="color:#b0bc1e"></i>
+                    <div class="info">
+                        <span>Javascript</span>
+                    </div>
+                    <div class="progress-line javascript">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bar"><i class="bx bxl-django" style="color:#1ebc1e"></i>
+                    <div class="info">
+                        <span>Django</span>
+                    </div>
+                    <div class="progress-line django">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bar"><i class="bx bxl-vuejs" style="color:#1ebcb4"></i>
+                    <div class="info">
+                        <span>VueJs</span>
+                    </div>
+                    <div class="progress-line vue">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bar"><i class="bx bxl-python" style="color:#a21ebc"></i>
+                    <div class="info">
+                        <span>Python</span>
+                    </div>
+                    <div class="progress-line python">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bar"><i class="bx bxl-postgresql" style="color:#bc1e53"></i>
+                    <div class="info">
+                        <span>PostgreSQL</span>
+                    </div>
+                    <div class="progress-line postgres">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container1">
+            <h1 class="heading1">Professional Skills</h1>
+            <div class="radial-bars">
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r = 80></circle>
+                        <circle class="path path-1" cx="100" cy="100" r = 80></circle>
+                    </svg>
+                    <div class="percentage">80%</div>
+                    <div class="text">Creativity</div>
+                </div>
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r = 80></circle>
+                        <circle class="path path-2" cx="100" cy="100" r = 80></circle>
+                    </svg>
+                    <div class="percentage">80%</div>
+                    <div class="text">Communication</div>
+                </div>
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r = 80></circle>
+                        <circle class="path path-3" cx="100" cy="100" r = 80></circle>
+                    </svg>
+                    <div class="percentage">80%</div>
+                    <div class="text">Problem Solving</div>
+                </div>
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r = 80></circle>
+                        <circle class="path path-4" cx="100" cy="100" r = 80></circle>
+                    </svg>
+                    <div class="percentage">85%</div>
+                    <div class="text">Teamwork</div>
+                </div>
+            </div>
+            
+        </div>
+     </section>
+
+     <section>
+        <div class="portfolio">
+            <div class="main-text">
+                <h2>Latest <span>Projects</span></h2>
+
+                <div class="portfolio-content">
+                    <div class="row">
+                        <img src="{% static './Screenshot (176).png' %}" alt="">
+                        <div class="layer">
+                            <h5>Eathub (Team Development)</h5>
+                            <p>
+                                A Platform for Food Vendors to put their products online while being able to manage their order requests and deliveries.
+                            </p>
+                            <a href="https://eathub.live"><i class="bx bx-link-external" style="color:var(--lightblue)"></i></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="{% static './Screenshot (177).png' %}" alt="">
+                        <div class="layer">
+                            <h5>HarvestFarm (full development)</h5>
+                            <p>A Web based Inventory Management System Application for farmers to manage their products.
+                            </p>
+                            <a href="#"><i class='bx bx-link-external' style="color:var(--lightblue)"></i></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="{% static './ext.png' %}" alt="">
+                        <div class="layer">
+                            <h5>Caleb University Exeat Booking System (Full Development)</h5>
+                            <p>
+                                A web-based platform for Booking exeat requests in Caleb University Lagos.
+                            </p>
+                            <a href="#"><i class="bx bx-link-external" style="color:var(--lightblue)"></i></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="{% static './Screenshot (77).png' %}" alt="">
+                        <div class="layer">
+                            <h5>Food Recommendation based on Recipe (Full Development)</h5>
+                            <p>
+                                A Web based Plaform for recommending food based on ingredients that you have in your kitchen.
+                            </p>
+                            <a href="#"><i class="bx bx-link-external" style="color:var(--lightblue)"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+     </section>
+     <section class="service-section">
+        <div class="overlay"></div>
+        <div class="services" id="services">
+            <div class="container">
+                <h1 class="sub-title">My <span>Certifications</span></h1>
+                <div class="services-list">
+                    
+                   
+                </div>
+            </div>
+
+        </div>
+        
+     </section>
+
+     <section class="contact" id="contact">
+        <div class="contact-text">
+            <h2>Contact <span>Me</span></h2>
+            <h4>Get in Touch</h4>
+            <p>Ready to collaborate with a dynamic team and embrace new challenges
+            </p>
+           
+            <div class="contact-icons">
+                <a href="mailto:3ples1234@gmail.com"><i class="bx bxl-gmail"></i></a>
+                <a href="https://wa.me/+2348156940124"><i class="bx bxl-whatsapp"></i></a>
+                <a href="https://www.linkedin.com/in/oluwanifemi-odukoya-39490821b/"><i class="bx bxl-linkedin-square"></i></a>
+             
+            </div>
+        </div>
+        <div class="contact-form">
+            <form action="{% url 'main-page' %}" method="POST" id="form">
+                {% csrf_token %}
+                <input type="text" placeholder="Enter your Name" maxlength="100" name="name" required>
+                <input type="email" placeholder="Enter your Email Address" name="email" required>
+                <input type="text" placeholder="Enter Your Subject" name="subject" required>
+                <textarea name="message" id="" cols="30" rows="10" placeholder="Enter your Message" maxlength="1000" required></textarea>
+                <input type="submit" value="submit" class="send" onclick="showLoader();">
+            </form>
+        </div>
+     </section>
+     <div class="last-text">
+        
+     </div>
+
+     <a href="#" class="top"><i class="bx bx-up-arrow-alt"></i></a>
+     
+
+
+
+
+
+     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+     <script src="{% static 'script.js' %}"></script>
+     <script>
+        
+        const showLoader =() =>{
+            if(document.querySelector("#form").valid()){
+                document.querySelector('.loading-bar').style.display = "grid";
+            }
+            
+        };
+        
+        if("{{ first }}"){
+            if(document.readyState === "complete") {
+                // Fully loaded!
+            }
+            else if(document.readyState === "interactive") {
+                // DOM ready! Images, frames, and other subresources are still downloading.
+            }
+            else {
+                document.querySelector('.loading-bar').style.display = "grid";
+                // Loading still in progress.
+                // To wait for it to complete, add "DOMContentLoaded" or "load" listeners.
+            
+                window.addEventListener("DOMContentLoaded", () => {
+                    // DOM ready! Images, frames, and other subresources are still downloading.
+                    document.querySelector('.loading-bar').style.display = "grid";
+                });
+            
+                window.addEventListener("load", () => {
+                    // Fully loaded!
+                    document.querySelector('.loading-bar').style.display = "";
+                });
+            }
+    
+        }
+        
+     </script>
+</body>
+</html>
